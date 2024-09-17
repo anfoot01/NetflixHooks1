@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import HeaderLog from "./HeaderLog";
+import HeaderSearch from "./HeaderSearch"
 import logo from "../assets/netflix-logo.png";
 import "./Header.scss";
-
-import searchIcon from "../assets/search-icon.png";
 const Header = () => {
   // const today = new Date();
   // const month = today.getMonth();
@@ -22,10 +21,7 @@ const Header = () => {
   //   const currentDate = month + "/" + date + "th";
   // }
   const currentDate = "Friday 8th July";
-  let [showState, setShowState] = useState(false);
-  function changeShowState() {
-    setShowState((showState) => !showState);
-  }
+  
   return (
     <header className="header-container">
       <div className="header-container__left">
@@ -33,19 +29,7 @@ const Header = () => {
         <div className="header-container__left__date">| {currentDate}</div>
       </div>
       <div className="header-container__right">
-        {showState ? (
-          <input className="header-container__right__input" type="text" />
-        ) : (
-          <div></div>
-        )}
-        <button onClick={changeShowState} className="search">
-          <img
-            className="header-container__right__search"
-            src={searchIcon}
-            alt="search"
-          ></img>
-        </button>
-
+        {/* <HeaderSearch></HeaderSearch> */}
         <HeaderLog></HeaderLog>
       </div>
     </header>
